@@ -86,7 +86,7 @@ Note: You do not need code in your summary - instead, reference where in your gi
   - It is **not automatically updated** with new accidents unless manually uploaded again by the contributor.
 
 
-2. # Data Retrieval
+2.  Data Retrieval
 
 ## 2.1 Retrieval Method
 
