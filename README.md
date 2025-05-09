@@ -9,13 +9,11 @@ Our project summary can be found:
 
 - as a notebook on `nbviewer`
 
-https://nbviewer.org/gist/YOUR-GH-USERNAME/????????????????????????/
-
-OR
+https://nbviewer.org/gist/GireesheePendela05/2ded31d49d9f2d018ca47b055ca543b0 
 
 - as a website:
 
-https://moran-teaching.github.io/project-repo/????????????
+https://moran-teaching.github.io/project-group-17/
 
 ## Accessing data
 
@@ -36,33 +34,97 @@ The original accident data is collected from various US traffic incident reporti
 - Traffic APIs and sensors
 
 
-[Insert link to processed data]
+Our processed data can be downloaded here: 
 
-NOTE: do not include your data in your git repo - it will likely be too large and cause issues.
+https://drive.google.com/file/d/1n1PY7TDNqYezVx1R4wanDH9AMJ6FLbNQ/view?usp=sharing
 
 
 ## Python scripts / notebooks
 
-The following scripts/notebooks were used produce the summary:
+- ## Data Cleaning
 
-- `src/script.py`
-- `notebooks/data_cleaning.ipynb`
-- `notebooks/data_enrichment.ipynb`
-- `notebooks/data_analysis.ipynb`
+- **Location in repo:** `notebooks/data_cleaning.ipynb`
 
-[Give a short description of what the notebooks contain, and their location in the git repo]
+1. **Data Retrieval:** Loading the raw dataset (`US_Accidents_March23.csv`) from Kaggle using pandas.
+
+2. **Data Cleaning Steps:**
+
+   2.1 **Time Conversion:** Conversion of `Start_Time` and `End_Time` columns to datetime objects.
+
+   2.2 **Feature Engineering:** Extraction of the hour from `Start_Time` to create a new `Hour` feature.
+
+   2.3 **Handling Missing Values:** Computation and inspection of missing data percentages across columns.
+
+   2.4 **Data Enrichment:** Feature engineering steps **including** new columns based on existing ones.
+
+   2.5 **Basic Data Cleaning:** Removal of irrelevant or redundant columns, and preparation of data types for analysis.
+
+   2.6 **Final Adjustments:** Additional treatment of null values, and preparation of the cleaned dataframe for export or further analysis.
+    
+- ## Data Exploration
+
+- **Location in repo:** `notebooks/data_exploration.ipynb`  
+- **Description:** This notebook performs exploratory data analysis through visualizations to uncover patterns in accident data. It includes:
+
+   3.1 **Accidents by Hour:** Visualization of accident distribution across hours using a bar plot.  
+
+   3.2 **Top 10 States with Most Accidents:** A Pie chart showing which states have the highest accident counts.  
+
+   3.3 **Top 10 Cities with Most Accidents:** Bar plot of cities with the most accident occurrences.  
+
+   3.4 **Top 10 Weather Conditions:** Bar plot visualizing weather conditions most associated with accidents.
+  
+   3.5 **Temperature during accidents (Weekend vs Weekday):** Box plot comparing temperature distributions during accidents on weekdays (0) versus weekends (1).  
+
+   3.6 **Accident Locations in USA** Geospatial plot displaying the geographic distribution of accidents across the continental United States based on latitude and longitude.  
+
+   3.7 **Number of Accidents by hour** An interactive plot showing the number of accidents by hour.  
+
+
+- ## Data Analysis
+
+- ### (Part 1)
+- **Location in repo:** `notebooks/data_analysis_Part1.ipynb`  
+- **Description:** This notebook focuses on analyzing accident patterns in the dataset. It includes:
+
+   4.1 **Most Dangerous Hours:** Identification of accident frequency by hour of the day.  
+
+   4.2 **Most Accident-Prone States:** Ranking of U.S. states based on accident count using value counts.  
+
+- ### (Part 2)
+- **Location in repo:** `notebooks/data_analysis_Part2.ipynb`  
+- **Description:** This notebook presents focused exploratory analysis to understand environmental factors related to accidents. It includes:
+
+   4.3 **Weather Condition Analysis:** Frequency of accidents across different `Weather_Condition` categories.  
+
+   4.4 **Temperature-Based Accident Distribution:** Categorization of accidents into cold (<32°F), moderate (32–80°F), and hot (>80°F) environments.  
+
+   4.5 **Time-Based Visualization:** Interactive bar plot using Plotly to display accident frequency by hour of the day.  
+
+
+- ## Regression Modeling
+
+- **Location in repo:** `notebooks/regression_modeling.ipynb`  
+- **Description:** This notebook focuses on modeling accident duration using statistical and machine learning techniques. It includes:
+
+- **Data Preprocessing:** Conversion of time columns and computation of accident duration in minutes.  
+- **Summary Statistics:** Descriptive analysis of key numeric variables such as `Duration`, `Temperature(F)`, `Hour`, `Start_Lat`, and `Start_Lng`, including missing value percentages.
+
+   5.1 **Linear Regression:** Baseline model to predict accident duration from time and location-based features.  
+
+   5.2 **Ridge Regression:** Regularized regression to reduce potential multicollinearity and improve stability.  
+
+   5.3 **Test Set Evaluation:** Model validation using an 80/20 train-test split with performance metrics (MSE and R²) for both models.
+
+
 
 ## Reproducibility
 
-Provide a `requirements.txt` file with packages and versions of all python packages to run the analysis.
+Refer to `requirements.txt` file with packages and versions of all python packages to run the analysis.
 
 ## Guide
 
 ### Summary
-
-Your summary should include the following. 
-
-Note: You do not need code in your summary - instead, reference where in your github repo the code is. The priority should be a concise, readable summary. You should include visualizations and conclusions regarding your data analysis.
 
 1. ## Data Format
 
@@ -92,10 +154,7 @@ Note: You do not need code in your summary - instead, reference where in your gi
 
 The US Accidents dataset was **manually downloaded** from Kaggle.
 
-- **Not retrieved using an API**: Kaggle datasets require user login and manual agreement to licensing terms, so direct API access was not possible.
-- **Not retrieved using web scraping**: The dataset was already provided as a downloadable CSV file through the Kaggle interface, so no web scraping was needed.
-
-Instead, the retrieval involved:
+The retrieval method involved:
 
 1. Logging into a Kaggle account.
 2. Navigating to the [US Accidents dataset page](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents).
@@ -160,45 +219,249 @@ After these steps, the dataset became:
 
 Each row cleanly represents one accident event with consistent types across all fields.
 
-4. explain any tests you did to check data (e.g. using `pytest` to verify that no missing values are present in the tidied dataframes, verify that the resulting number of rows is reasonable)
+# 4. Data enrichment steps: 
+- Convert Timestamps: Convert Start_Time and End_Time to datetime format.    
+- Duration Calculation: Create a Duration_minutes feature by calculating the time difference between End_Time and Start_Time.    
+- Time Features Extraction: Extract Start_Hour, Start_DayOfWeek, and Start_Month from Start_Time.     
+- Day/Night Classification: Classify accidents as Day (6 AM - 6 PM) or Night based on Start_Hour.     
+- Weekend Flag: Assign a binary Is_Weekend flag (1 for Saturday/Sunday, 0 otherwise).     
+- Season Mapping: Assign a Season based on Start_Month using a mapping function.    
 
-5. explain any data enrichment steps
+# 5. Meaningful summary statistics:
 
-6. describe and explain meaningful summary statistics
+- **5.1. Analysis 1: Hourly Distribution of Accidents**  
+  - The distribution of accidents by hour reveals clear temporal patterns:  
+    - Morning peaks at 7 AM and 8 AM (533,444 and 528,563 accidents respectively), followed by an evening peak between 4 PM and 6 PM.  
+    - Lowest accident counts occur between 2 AM and 5 AM, when traffic volume is minimal.  
+  - This suggests that accident frequency closely follows daily commuting behavior, highlighting rush hours as critical periods for road safety interventions.  
 
-7. present around 4-6 visualizations related to the data, explain trends and conclusions
+- **5.2. Analysis 2: State-wise Accident Count**  
+  - Among all states, California (1.52M), Florida (751K), and Texas (535K) reported the highest accident counts.  
+  - These figures align with population density and traffic volumes in major metropolitan areas. It highlights the need for localized traffic safety strategies and infrastructure planning.  
 
-You should have at least one interactive data widget.
+- **5.3. Analysis 3: Weather Conditions at Accident Time**  
+  - The majority of accidents occurred during ‘Fair’ (2.19M) and ‘Mostly Cloudy’ (921K) weather conditions, rather than during severe weather.  
+  - This implies that accidents are more frequent when road visibility is good, likely because people are more active and possibly more complacent. Hazardous conditions like snow or fog, while dangerous, see fewer total accidents — possibly due to reduced road usage or more cautious driving.  
 
-You can include figures for example from an external notebook:
-- https://quarto.org/docs/blog/posts/2023-03-17-jupyter-cell-embedding/ 
-- https://quarto.org/docs/authoring/includes.html
+- **5.4. Analysis 4: Temperature Analysis**  
+  - Average temperature at accident time was 61.7°F.  
+  - Most accidents occurred in moderate temperatures (32°F–80°F) with ~5.18 million records, compared to 1.14M in hot and 480K in cold weather.  
+  - This distribution mirrors typical driving conditions across most of the US and reflects seasonal traffic volume. However, extreme temperatures could still influence accident severity rather than frequency.  
 
-8. at the end, display a graph of the git commit history
+- **5.5. Analysis 5: Accident Duration Statistics**    
+  - count:        6.805138e+06    
+  - mean:         4.282940e+02    
+  - std:      1.328626e+04    
+  - min:      1.216667e+00    
+  - 25%:      3.000000e+01    
+  - 50%:      6.240000e+01    
+  - 75%:      1.225000e+02    
+  - max:     2.812939e+06  
+  
+     
+# 6. Data visualizations & Trends:
 
-For team members of 2: 10 commits. Of 3: 15 commits. Of 4: 20 commits.
+ ## 6.1. Distribution of Accidents by Hour:
+  ![image](https://github.com/user-attachments/assets/5e6ed18c-0692-4c49-a19c-d2f727fe2814)   
+  - This histogram shows that accidents peak around 7 AM and again between 4–6 PM.
+  - These peaks align with morning and evening rush hours, indicating commuter traffic is a major factor.
 
-Your commits history elsewhere may be more dirty, but these 10-20 commits need to be clean and can be drawn as a graph.
+ ## 6.2. Top 10 States with Most Accidents
+ ![image](https://github.com/user-attachments/assets/a985838b-c06a-421b-8135-cb1d14c3a984)    
+ - A pie chart showing that states like California, Florida, and Texas report the highest number of accidents.
+ - Accident volume correlates with state population and urban density.
 
-Make sure your git graphs include author names, commit messages, date, git tags if any.
+## 6.3. Top 10 Cities with Most Accidents
+![image](https://github.com/user-attachments/assets/f8efc8c8-336b-4882-9f3f-5418d745c5ef)
 
-You can generate nice graphs of git commits with many tools. Among others, you could generate git-graphs using the following tools:
+- A horizontal bar plot highlighting cities with the highest accident counts.
+- Large metropolitan cities show significantly more accidents, likely due to higher traffic volumes.
 
-- in vscode: https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
-- https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
-- https://www.gitkraken.com/solutions/commit-graph
+## 6.4.Top 10 Weather Conditions during Accidents
+![image](https://github.com/user-attachments/assets/3d193c78-63e7-4c72-a861-0bdac7eed1fd)
 
-### Data storage options
+- Bar chart showing most accidents happen in 'Fair', 'Clear', and 'Mostly Cloudy' weather.
+- Contrary to intuition, severe weather conditions aren’t the most common during accidents, suggesting that normal driving conditions may lead to more complacency.
 
-Some options for data storage:
+## 6.5. Temperature during Accidents (Weekday vs Weekend)
+![image](https://github.com/user-attachments/assets/64c8e240-edef-4c53-9471-31063d221ccf)
 
-- Box link (free with Rutgers account)
-- Dropbox
-- Google Drive
+- Box plot comparing temperature distributions for accidents on weekdays vs weekends.
+- Temperature ranges are similar across both, but there are slightly more extreme values during weekends.
 
-The following companies have free data storage (up to ~5 GB) for 12 months. Be careful to make sure you're within the free limits!!!
+## 6.6. Accident Locations in USA
+![image](https://github.com/user-attachments/assets/b1a0c094-7d45-45da-93c9-8c4240a23095)
 
-- AWS S3 https://aws.amazon.com/s3/
-- Google Cloud https://cloud.google.com/free
-- Microsoft Azure https://azure.microsoft.com/en-us/free/students
+- A scatter plot mapping accident coordinates across the U.S., forming clear outlines of the highway network.
+- High accident densities follow major interstate routes and urban corridors, especially in the East, California, and Texas.
 
+## 6.7. Interactive Plot: Number of Accidents by hour.
+![image](https://github.com/user-attachments/assets/df4a39b9-836f-433f-8540-7f8362a9bffc)
+
+>Find the interactive plot in the website at the begining of the 'Readme.md' file
+
+### Major trends observed:
+- Rush hours are dangerous: Accident peaks align with typical commuting times (7–9 AM, 4–6 PM).
+- Population density matters: States and cities with larger populations see more accidents.
+- Normal weather does not mean safe driving: Most accidents occur in fair or clear conditions, suggesting driver behavior is more crucial than weather.
+- Accidents cluster around road networks: Geographic distribution matches interstate and urban traffic corridors.
+
+# 7. Regression Modeling: Predicting Accident Frequency
+
+### 7.1 Objective
+Predict accident frequency using features such as **weather conditions**, **temperature**, **state**, and **city**.
+
+### 7.2 Models Used
+- **Linear Regression**: Used as a baseline model to understand relationships between features and accident frequency.
+- **Ridge Regression**: Added regularization to reduce overfitting and test for performance improvement.
+
+### 7.3 Model Performance
+
+#### 7.3.1 Linear Regression
+- **Mean Squared Error (MSE):** 17,968,374,622.93  
+- **R² Score:** 0.02 → Indicates **very weak predictive power**
+
+#### 7.3.2 Ridge Regression
+- **Mean Squared Error (MSE):** 17,968,374,622.94  
+- **R² Score:** 0.02 → **No improvement** over Linear Regression
+
+> Both models showed **poor performance**, with high error and negligible explained variance.
+
+### Feature Coefficients (Influence on Accident Frequency)
+
+| Feature            | Coefficient | Interpretation                                                                 |
+|--------------------|-------------|---------------------------------------------------------------------------------|
+| **Weather_Condition**  | +230.45     | Higher weather index (e.g., rain, snow) increases accident frequency            |
+| **Temperature (°F)**   | +777.99     | Accident frequency increases with temperature                                  |
+| **State**              | +439.48     | Location factor based on state encoding                                        |
+| **City**               | −0.0574     | Slight inverse correlation with accident frequency                             |
+
+> Coefficients were identical for both models, indicating **regularization had minimal impact**.
+
+### Key Insights
+
+- **Weak Model Fit:** Both models poorly predicted accident frequency due to **low R²** and **high MSE**.
+- **Linear ≈ Ridge:** Ridge regularization **did not help**, suggesting overfitting was not the main issue.
+- **Feature Relevance:** The selected features **may not strongly influence accident frequency**.
+- **Recommendation:** Enhance the model with **more meaningful features** (e.g., traffic volume, time of day, road type), and explore **non-linear models** (e.g., Random Forest, XGBoost).
+
+# 8. Graph of the git commit history:
+
+<pre> ### Git Commit Graph ``` *   commit 327f14d46f91cadcc997bd2cdaff004b14450a33
+|\  Merge: 0096f1f 75b4f75
+| | Author: Jeeshitha Kolla <vk536@scarletmail.rutgers.edu>
+| | Date:   Tue Apr 29 22:46:45 2025 -0400
+| | 
+| |     Merge branch 'main' of https://github.com/moran-teaching/project-group-17
+| | 
+| * commit 75b4f7567ac0c1b0dd2d952c0cf08db6e5372b16
+| | Author: Anshu-Goli <ag2502@scarletmail.rutgers.edu>
+| | Date:   Tue Apr 29 22:10:24 2025 -0400
+| | 
+| |     Added 5.2 Ridge Regression, 5.3 model evaluation on test data, and summary statistics
+| | 
+| * commit a9235f4ad235fe59f7f1d3b1bc504d62635001ac
+| | Author: Anshu-Goli <ag2502@scarletmail.rutgers.edu>
+| | Date:   Tue Apr 29 21:17:38 2025 -0400
+| | 
+| |     Added 5.1 Linear Regression model for predicting accident duration
+| | 
+| * commit 01be85583fd96f2a90f84efd13d1ae92d8a006d3
+| | Author: Anshu-Goli <ag2502@scarletmail.rutgers.edu>
+| | Date:   Tue Apr 29 21:14:30 2025 -0400
+| | 
+| |     Added 5.1 Linear Regression model for predicting accident duration
+| | 
+* | commit 0096f1fd93efcb37c199a4b743de3804d3544fb6
+|/  Author: Jeeshitha Kolla <vk536@scarletmail.rutgers.edu>
+|   Date:   Tue Apr 29 22:45:14 2025 -0400
+|   
+|       Edited data exploration and added data analysis part 1
+| 
+* commit c7ec94656f2c10690557c6c79a703af6d5175501
+| Author: Jeeshitha Kolla <vk536@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 20:54:44 2025 -0400
+| 
+|     Completed data exploration
+| 
+* commit 757506252947b0967b781625de5b7b2b767ef1bf
+| Author: Jeeshitha Kolla <vk536@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 20:27:47 2025 -0400
+| 
+|     Added three other data exploration plots
+| 
+* commit 2bb5ea475111ddea3fc8f80911bb6839d1fcc51d
+| Author: Jeeshitha Kolla <vk536@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 19:46:30 2025 -0400
+| 
+|     Added two data exploration plots
+| 
+* commit d70825292aed33bba6e99481a3e981e4c9c7940e
+| Author: SirithaChidipothu <sc2855@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 16:12:22 2025 -0400
+| 
+|     backups of cleaned data
+| 
+* commit 756858ac729db634dcb00b3116e3cbfff9787884
+| Author: SirithaChidipothu <sc2855@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 09:19:48 2025 -0400
+| 
+|     column selection and sanity checks
+| 
+* commit 68b949988ec30ccaeedeb530b855d3ee25bdee43
+| Author: SirithaChidipothu <sc2855@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 00:45:50 2025 -0400
+| 
+|     Data cleaning and missing fields
+| 
+* commit f3d59c23ae9cb08352b5a48ff6629d6d60536294
+| Author: SirithaChidipothu <sc2855@scarletmail.rutgers.edu>
+| Date:   Tue Apr 29 00:17:51 2025 -0400
+| 
+|     data enrichment for us accidents data
+| 
+* commit e1baf841648fb7a2b125898d9a0b359df9d80dd9
+| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Date:   Sun Apr 27 20:56:40 2025 -0400
+| 
+|     Transformed raw data
+| 
+* commit d4611c1f13203ba31b95cfd0155431b74c8dcf30
+| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Date:   Sun Apr 27 20:51:06 2025 -0400
+| 
+|     rTansformation from raw data to tidy data in notebook
+| 
+* commit 9558d85865dcff4ed2648bfa0410ce95d5f6f1d2
+| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Date:   Sun Apr 27 20:41:45 2025 -0400
+| 
+|     Update README with data documentation and retrieval explanation
+| 
+* commit 5c5899b3879bfd54cff97b512b502e2cfb30810e
+| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Date:   Sun Apr 27 20:11:10 2025 -0400
+| 
+|     Added raw data retrieval explanation and uploaded raw dataset
+| 
+* commit 28ff0a958a29a4a815e7e4ff0e17da88a0afc12f
+| Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+| Date:   Sun Apr 27 22:42:31 2025 +0000
+| 
+|     add deadline
+| 
+* commit 7ba296d755fd0cba2ca6e26aa147f141d8db623f
+| Author: Gemma Moran <gem.e.moran@gmail.com>
+| Date:   Sat Apr 12 13:54:43 2025 -0400
+| 
+|     Update README.md
+| 
+* commit 0e2fe59d98c805e061ff107a374cccc63b5141ac
+  Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+  Date:   Sat Apr 12 16:15:47 2025 +0000
+  
+      Initial commit
+ ``` </pre>
+  > The 'unknown' author in the git commit graph is Gireeshee Pendela.
+
+ ----THANK YOU----
