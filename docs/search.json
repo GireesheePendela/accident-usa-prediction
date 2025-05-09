@@ -46,7 +46,56 @@
     "href": "website.html",
     "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
     "section": "",
-    "text": "Data Exploration\nThis document explores the dataset and provides insights through visualizations.\n\n1.Distribution of Accidents by Hour\nThis plot shows the distribution of accidents across different hours of the day. It helps identify when accidents are more likely to occur.\nVariables:\n- X-axis: Hour of the day (from 0 to 23) — This represents the time of day when accidents occurred.\n- Y-axis: Number of Accidents — The total count of accidents that happened at each hour of the day.\nThe plot reveals patterns in accident occurrences based on time, helping to identify peak accident hours.\n\n\n\n\n\n\n\n\n\n\n\n2.Top 10 States with Most Accidents\nThis plot visualizes the distribution of accidents across the top 10 states. It helps identify which states have the highest accident rates.\nVariables:\n\nLabels: States (e.g., “California”, “New York”)\nValues: Number of Accidents — The number of accidents that occurred in each state.\n\n\n\n\n\n\n\n\n\n\n\n\n3.Top 10 Cities with Most Accidents\nThis bar plot shows the top 10 cities with the most accidents. It gives insights into the cities where accidents are most frequent.\nVariables:\n\nX-axis: Number of Accidents — The total count of accidents in each city.\nY-axis: Cities — The names of the cities.\n\n\n\n\n\n\n\n\n\n\n\n\n4.Top 10 Weather Conditions during Accidents\nThis bar plot displays the top 10 weather conditions under which accidents occurred.\nVariables:\n\nX-axis: Weather Conditions (e.g., “Clear”, “Rain”)\nY-axis: Number of Accidents — The number of accidents that occurred under each weather condition.\n\n\n\n\n\n\n\n\n\n\n\n\n5.Temperature Distribution during Accidents\nThis box plot compares temperatures during accidents on weekdays and weekends.\nVariables:\n\nX-axis: Is_Weekend (1 for Weekend, 0 for Weekday)\nY-axis: Temperature (Fahrenheit) — The temperature at the time of the accident.\n\n\n\n\n\n\n\n\n\n\n\n\n6.Accident Locations in USA\nThis scatter plot visualizes accident locations across the United States using geographic coordinates.\nVariables:\n\nX-axis: Longitude — The geographic coordinate representing the east-west position.\nY-axis: Latitude — The geographic coordinate representing the north-south position.\n\n\n\n\n\n\n\n\n\n\n\n\n7.Interactive Plot: Number of Accidents by Hour\nThis interactive plot shows the number of accidents across different hours of the day. It’s interactive, so you can hover over each bar to see the exact number of accidents.\nVariables:\n\nX-axis: Hour of the Day — The time of day when accidents occurred.\nY-axis: Number of Accidents — The total number of accidents that occurred at each hour."
+    "text": "This project aims to explore traffic accident patterns in the United States using a comprehensive dataset of over 6.8 million records from 2016 to 2023. We sought to uncover trends, analyze environmental and temporal factors, and apply regression modeling to predict accident duration and frequency."
+  },
+  {
+    "objectID": "website.html#project-objective",
+    "href": "website.html#project-objective",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "",
+    "text": "This project aims to explore traffic accident patterns in the United States using a comprehensive dataset of over 6.8 million records from 2016 to 2023. We sought to uncover trends, analyze environmental and temporal factors, and apply regression modeling to predict accident duration and frequency."
+  },
+  {
+    "objectID": "website.html#data-source",
+    "href": "website.html#data-source",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "2. Data Source",
+    "text": "2. Data Source\n•⁠ ⁠Dataset: US Accidents (3.0 Million records)\n•⁠ ⁠Provider: Sobhan Moosavi (via Kaggle)\n•⁠ ⁠Scope: Covers 49 U.S. states (excluding Alaska and Hawaii)\n•⁠ ⁠Time Period: February 2016 – March 2023\n•⁠ ⁠Fields: Accident timestamps, location, weather, road attributes, and traffic signals."
+  },
+  {
+    "objectID": "website.html#data-cleaning-enrichment",
+    "href": "website.html#data-cleaning-enrichment",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "3. Data Cleaning & Enrichment",
+    "text": "3. Data Cleaning & Enrichment\n•⁠ ⁠Converted ⁠ Start_Time ⁠ and ⁠ End_Time ⁠ to datetime objects\n•⁠ ⁠Created new features: ⁠ Duration_minutes ⁠, ⁠ Hour ⁠, ⁠ DayOfWeek ⁠, ⁠ Month ⁠, ⁠ Is_Weekend ⁠, ⁠ Day/Night ⁠, and ⁠ Season ⁠\n•⁠ ⁠Handled missing values and selected relevant columns for analysis\n•⁠ ⁠Final dataset was tidy, consistent, and analysis-ready"
+  },
+  {
+    "objectID": "website.html#data-exploration-highlights",
+    "href": "website.html#data-exploration-highlights",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "4. Data Exploration Highlights",
+    "text": "4. Data Exploration Highlights\n•⁠ ⁠Rush Hour Peaks: Accidents spike around 7–9 AM and 4–6 PM\n•⁠ ⁠High-Risk States/Cities: California, Florida, and Texas report the most accidents\n•⁠ ⁠Weather Insight: Most accidents happen in clear or fair weather, not during storms or snow\n•⁠ ⁠Temperature Trend: Most accidents occur in moderate temperatures (32°F–80°F)\n•⁠ ⁠Location Density: Accidents cluster around major highways and urban areas"
+  },
+  {
+    "objectID": "website.html#data-visualization-summary",
+    "href": "website.html#data-visualization-summary",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "5. Data Visualization Summary",
+    "text": "5. Data Visualization Summary\n\ni.Distribution of Accidents by Hour\nThis plot shows the distribution of accidents across different hours of the day. It helps identify when accidents are more likely to occur.\nVariables:\n- X-axis: Hour of the day (from 0 to 23) — This represents the time of day when accidents occurred.\n- Y-axis: Number of Accidents — The total count of accidents that happened at each hour of the day.\nThe plot reveals patterns in accident occurrences based on time, helping to identify peak accident hours.\n\n\n\n\n\n\n\n\n\n\n\nii.Top 10 States with Most Accidents\nThis plot visualizes the distribution of accidents across the top 10 states. It helps identify which states have the highest accident rates.\nVariables:\n\nLabels: States (e.g., “California”, “New York”)\nValues: Number of Accidents — The number of accidents that occurred in each state.\n\n\n\n\n\n\n\n\n\n\n\n\niii.Top 10 Cities with Most Accidents\nThis bar plot shows the top 10 cities with the most accidents. It gives insights into the cities where accidents are most frequent.\nVariables:\n\nX-axis: Number of Accidents — The total count of accidents in each city.\nY-axis: Cities — The names of the cities.\n\n\n\n\n\n\n\n\n\n\n\n\niv.Top 10 Weather Conditions during Accidents\nThis bar plot displays the top 10 weather conditions under which accidents occurred.\nVariables:\n\nX-axis: Weather Conditions (e.g., “Clear”, “Rain”)\nY-axis: Number of Accidents — The number of accidents that occurred under each weather condition.\n\n\n\n\n\n\n\n\n\n\n\n\nv.Temperature Distribution during Accidents\nThis box plot compares temperatures during accidents on weekdays and weekends.\nVariables:\n\nX-axis: Is_Weekend (1 for Weekend, 0 for Weekday)\nY-axis: Temperature (Fahrenheit) — The temperature at the time of the accident.\n\n\n\n\n\n\n\n\n\n\n\n\nvi.Accident Locations in USA\nThis scatter plot visualizes accident locations across the United States using geographic coordinates.\nVariables:\n\nX-axis: Longitude — The geographic coordinate representing the east-west position.\nY-axis: Latitude — The geographic coordinate representing the north-south position.\n\n\n\n\n\n\n\n\n\n\n\n\nvii.Interactive Plot: Number of Accidents by Hour\nThis interactive plot shows the number of accidents across different hours of the day. It’s interactive, so you can hover over each bar to see the exact number of accidents.\nVariables:\n\nX-axis: Hour of the Day — The time of day when accidents occurred.\nY-axis: Number of Accidents — The total number of accidents that occurred at each hour."
+  },
+  {
+    "objectID": "website.html#regression-modeling",
+    "href": "website.html#regression-modeling",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "6. Regression Modeling",
+    "text": "6. Regression Modeling\n\n6.1 Objective\nPredict accident duration and frequency using features like temperature, weather, state, and city.\n\n\n6.2 Models Used\n•⁠ ⁠Linear Regression (baseline model)\n•⁠ ⁠Ridge Regression (with L2 regularization)\n\n\n6.3 Results\n•⁠ ⁠Both models had very low R² (0.02) and high MSE (~17.96B)\n•⁠ ⁠Ridge offered no performance improvement\n•⁠ ⁠Coefficients showed minor influence from selected features\n\n\n6.4 Interpretation\n•⁠ ⁠Weak model performance suggests missing important predictors (e.g., road type, traffic density)\n•⁠ ⁠Future work should explore non-linear models (e.g., Random Forest, XGBoost) for better accuracy"
+  },
+  {
+    "objectID": "website.html#project-access",
+    "href": "website.html#project-access",
+    "title": "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)",
+    "section": "7. Project Access",
+    "text": "7. Project Access\n•⁠ ⁠📘 Notebook version:\nnbviewer link\n•⁠ ⁠🌐 Website version:\nGitHub Pages website\n•⁠ ⁠🧪 Processed data:\nGoogle Drive link"
   },
   {
     "objectID": "notebooks/data_exploration.html",

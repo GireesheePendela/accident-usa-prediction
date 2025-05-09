@@ -102,16 +102,28 @@ require(['plotly'], function(Plotly) {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link active" data-scroll-target="#data-exploration">Data Exploration</a>
+  <li><a href="#project-objective" id="toc-project-objective" class="nav-link active" data-scroll-target="#project-objective">1. Project Objective</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">2. Data Source</a></li>
+  <li><a href="#data-cleaning-enrichment" id="toc-data-cleaning-enrichment" class="nav-link" data-scroll-target="#data-cleaning-enrichment">3. Data Cleaning &amp; Enrichment</a></li>
+  <li><a href="#data-exploration-highlights" id="toc-data-exploration-highlights" class="nav-link" data-scroll-target="#data-exploration-highlights">4. Data Exploration Highlights</a></li>
+  <li><a href="#data-visualization-summary" id="toc-data-visualization-summary" class="nav-link" data-scroll-target="#data-visualization-summary">5. Data Visualization Summary</a>
   <ul class="collapse">
-  <li><a href="#distribution-of-accidents-by-hour" id="toc-distribution-of-accidents-by-hour" class="nav-link" data-scroll-target="#distribution-of-accidents-by-hour">1.Distribution of Accidents by Hour</a></li>
-  <li><a href="#top-10-states-with-most-accidents" id="toc-top-10-states-with-most-accidents" class="nav-link" data-scroll-target="#top-10-states-with-most-accidents">2.Top 10 States with Most Accidents</a></li>
-  <li><a href="#top-10-cities-with-most-accidents" id="toc-top-10-cities-with-most-accidents" class="nav-link" data-scroll-target="#top-10-cities-with-most-accidents">3.Top 10 Cities with Most Accidents</a></li>
-  <li><a href="#top-10-weather-conditions-during-accidents" id="toc-top-10-weather-conditions-during-accidents" class="nav-link" data-scroll-target="#top-10-weather-conditions-during-accidents">4.Top 10 Weather Conditions during Accidents</a></li>
-  <li><a href="#temperature-distribution-during-accidents" id="toc-temperature-distribution-during-accidents" class="nav-link" data-scroll-target="#temperature-distribution-during-accidents">5.Temperature Distribution during Accidents</a></li>
-  <li><a href="#accident-locations-in-usa" id="toc-accident-locations-in-usa" class="nav-link" data-scroll-target="#accident-locations-in-usa">6.Accident Locations in USA</a></li>
-  <li><a href="#interactive-plot-number-of-accidents-by-hour" id="toc-interactive-plot-number-of-accidents-by-hour" class="nav-link" data-scroll-target="#interactive-plot-number-of-accidents-by-hour">7.Interactive Plot: Number of Accidents by Hour</a></li>
+  <li><a href="#i.distribution-of-accidents-by-hour" id="toc-i.distribution-of-accidents-by-hour" class="nav-link" data-scroll-target="#i.distribution-of-accidents-by-hour">i.Distribution of Accidents by Hour</a></li>
+  <li><a href="#ii.top-10-states-with-most-accidents" id="toc-ii.top-10-states-with-most-accidents" class="nav-link" data-scroll-target="#ii.top-10-states-with-most-accidents">ii.Top 10 States with Most Accidents</a></li>
+  <li><a href="#iii.top-10-cities-with-most-accidents" id="toc-iii.top-10-cities-with-most-accidents" class="nav-link" data-scroll-target="#iii.top-10-cities-with-most-accidents">iii.Top 10 Cities with Most Accidents</a></li>
+  <li><a href="#iv.top-10-weather-conditions-during-accidents" id="toc-iv.top-10-weather-conditions-during-accidents" class="nav-link" data-scroll-target="#iv.top-10-weather-conditions-during-accidents">iv.Top 10 Weather Conditions during Accidents</a></li>
+  <li><a href="#v.temperature-distribution-during-accidents" id="toc-v.temperature-distribution-during-accidents" class="nav-link" data-scroll-target="#v.temperature-distribution-during-accidents">v.Temperature Distribution during Accidents</a></li>
+  <li><a href="#vi.accident-locations-in-usa" id="toc-vi.accident-locations-in-usa" class="nav-link" data-scroll-target="#vi.accident-locations-in-usa">vi.Accident Locations in USA</a></li>
+  <li><a href="#vii.interactive-plot-number-of-accidents-by-hour" id="toc-vii.interactive-plot-number-of-accidents-by-hour" class="nav-link" data-scroll-target="#vii.interactive-plot-number-of-accidents-by-hour">vii.Interactive Plot: Number of Accidents by Hour</a></li>
   </ul></li>
+  <li><a href="#regression-modeling" id="toc-regression-modeling" class="nav-link" data-scroll-target="#regression-modeling">6. Regression Modeling</a>
+  <ul class="collapse">
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">6.1 Objective</a></li>
+  <li><a href="#models-used" id="toc-models-used" class="nav-link" data-scroll-target="#models-used">6.2 Models Used</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">6.3 Results</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">6.4 Interpretation</a></li>
+  </ul></li>
+  <li><a href="#project-access" id="toc-project-access" class="nav-link" data-scroll-target="#project-access">7. Project Access</a></li>
   </ul>
 </nav>
     </div>
@@ -150,17 +162,43 @@ require(['plotly'], function(Plotly) {
 </header>
 
 
-<section id="data-exploration" class="level1">
-<h1>Data Exploration</h1>
-<p><strong>This document explores the dataset and provides insights through visualizations.</strong></p>
-<section id="distribution-of-accidents-by-hour" class="level3">
-<h3 class="anchored" data-anchor-id="distribution-of-accidents-by-hour">1.Distribution of Accidents by Hour</h3>
+<section id="project-objective" class="level2">
+<h2 class="anchored" data-anchor-id="project-objective">1. Project Objective</h2>
+<p>This project aims to explore traffic accident patterns in the United States using a comprehensive dataset of over <em>6.8 million records</em> from 2016 to 2023. We sought to uncover trends, analyze environmental and temporal factors, and apply regression modeling to predict accident duration and frequency.</p>
+</section>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">2. Data Source</h2>
+<p>•⁠ ⁠<em>Dataset:</em> <a href="https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents">US Accidents (3.0 Million records)</a><br>
+•⁠ ⁠<em>Provider:</em> Sobhan Moosavi (via Kaggle)<br>
+•⁠ ⁠<em>Scope:</em> Covers 49 U.S. states (excluding Alaska and Hawaii)<br>
+•⁠ ⁠<em>Time Period:</em> February 2016 – March 2023<br>
+•⁠ ⁠<em>Fields:</em> Accident timestamps, location, weather, road attributes, and traffic signals.</p>
+</section>
+<section id="data-cleaning-enrichment" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning-enrichment">3. Data Cleaning &amp; Enrichment</h2>
+<p>•⁠ ⁠Converted ⁠ Start_Time ⁠ and ⁠ End_Time ⁠ to datetime objects<br>
+•⁠ ⁠Created new features: ⁠ Duration_minutes ⁠, ⁠ Hour ⁠, ⁠ DayOfWeek ⁠, ⁠ Month ⁠, ⁠ Is_Weekend ⁠, ⁠ Day/Night ⁠, and ⁠ Season ⁠<br>
+•⁠ ⁠Handled missing values and selected relevant columns for analysis<br>
+•⁠ ⁠Final dataset was tidy, consistent, and analysis-ready</p>
+</section>
+<section id="data-exploration-highlights" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration-highlights">4. Data Exploration Highlights</h2>
+<p>•⁠ ⁠<em>Rush Hour Peaks:</em> Accidents spike around <em>7–9 AM</em> and <em>4–6 PM</em><br>
+•⁠ ⁠<em>High-Risk States/Cities:</em> California, Florida, and Texas report the most accidents<br>
+•⁠ ⁠<em>Weather Insight:</em> Most accidents happen in <em>clear or fair weather</em>, not during storms or snow<br>
+•⁠ ⁠<em>Temperature Trend:</em> Most accidents occur in <em>moderate temperatures (32°F–80°F)</em><br>
+•⁠ ⁠<em>Location Density:</em> Accidents cluster around <em>major highways and urban areas</em></p>
+</section>
+<section id="data-visualization-summary" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization-summary">5. Data Visualization Summary</h2>
+<section id="i.distribution-of-accidents-by-hour" class="level3">
+<h3 class="anchored" data-anchor-id="i.distribution-of-accidents-by-hour">i.Distribution of Accidents by Hour</h3>
 <p>This plot shows the <strong>distribution of accidents</strong> across different hours of the day. It helps identify when accidents are more likely to occur.</p>
 <p><strong>Variables</strong>:</p>
 <p><strong>- X-axis</strong>: Hour of the day (from 0 to 23) — This represents the time of day when accidents occurred.</p>
 <p><strong>- Y-axis</strong>: Number of Accidents — The total count of accidents that happened at each hour of the day.</p>
 <p>The plot reveals patterns in accident occurrences based on time, helping to identify peak accident hours.</p>
-<div id="762646c7" class="cell" data-execution_count="1">
+<div id="4661b15a" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -170,15 +208,15 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 </section>
-<section id="top-10-states-with-most-accidents" class="level3">
-<h3 class="anchored" data-anchor-id="top-10-states-with-most-accidents">2.Top 10 States with Most Accidents</h3>
+<section id="ii.top-10-states-with-most-accidents" class="level3">
+<h3 class="anchored" data-anchor-id="ii.top-10-states-with-most-accidents">ii.Top 10 States with Most Accidents</h3>
 <p>This plot visualizes the <strong>distribution of accidents</strong> across the <strong>top 10 states</strong>. It helps identify which states have the highest accident rates.</p>
 <p><strong>Variables</strong>:</p>
 <ul>
 <li><p><strong>Labels</strong>: States (e.g., “California”, “New York”)</p></li>
 <li><p><strong>Values</strong>: Number of Accidents — The number of accidents that occurred in each state.</p></li>
 </ul>
-<div id="b406922f" class="cell" data-execution_count="2">
+<div id="d25f36ef" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -188,15 +226,15 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 </section>
-<section id="top-10-cities-with-most-accidents" class="level3">
-<h3 class="anchored" data-anchor-id="top-10-cities-with-most-accidents">3.Top 10 Cities with Most Accidents</h3>
+<section id="iii.top-10-cities-with-most-accidents" class="level3">
+<h3 class="anchored" data-anchor-id="iii.top-10-cities-with-most-accidents">iii.Top 10 Cities with Most Accidents</h3>
 <p>This bar plot shows the <strong>top 10 cities</strong> with the most accidents. It gives insights into the cities where accidents are most frequent.</p>
 <p><strong>Variables</strong>:</p>
 <ul>
 <li><p><strong>X-axis</strong>: Number of Accidents — The total count of accidents in each city.</p></li>
 <li><p><strong>Y-axis</strong>: Cities — The names of the cities.</p></li>
 </ul>
-<div id="86857ebb" class="cell" data-execution_count="3">
+<div id="3512e612" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -206,15 +244,15 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 </section>
-<section id="top-10-weather-conditions-during-accidents" class="level3">
-<h3 class="anchored" data-anchor-id="top-10-weather-conditions-during-accidents">4.Top 10 Weather Conditions during Accidents</h3>
+<section id="iv.top-10-weather-conditions-during-accidents" class="level3">
+<h3 class="anchored" data-anchor-id="iv.top-10-weather-conditions-during-accidents">iv.Top 10 Weather Conditions during Accidents</h3>
 <p>This bar plot displays the <strong>top 10 weather conditions</strong> under which accidents occurred.</p>
 <p><strong>Variables</strong>:</p>
 <ul>
 <li><p><strong>X-axis</strong>: Weather Conditions (e.g., “Clear”, “Rain”)</p></li>
 <li><p><strong>Y-axis</strong>: Number of Accidents — The number of accidents that occurred under each weather condition.</p></li>
 </ul>
-<div id="4b79e308" class="cell" data-execution_count="4">
+<div id="d10552cf" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -224,15 +262,15 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 </section>
-<section id="temperature-distribution-during-accidents" class="level3">
-<h3 class="anchored" data-anchor-id="temperature-distribution-during-accidents">5.Temperature Distribution during Accidents</h3>
+<section id="v.temperature-distribution-during-accidents" class="level3">
+<h3 class="anchored" data-anchor-id="v.temperature-distribution-during-accidents">v.Temperature Distribution during Accidents</h3>
 <p>This box plot compares <strong>temperatures during accidents</strong> on weekdays and weekends.</p>
 <p><strong>Variables</strong>:</p>
 <ul>
 <li><p><strong>X-axis</strong>: Is_Weekend (1 for Weekend, 0 for Weekday)</p></li>
 <li><p><strong>Y-axis</strong>: Temperature (Fahrenheit) — The temperature at the time of the accident.</p></li>
 </ul>
-<div id="42633005" class="cell" data-execution_count="5">
+<div id="fc84bc3c" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -242,15 +280,15 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 </section>
-<section id="accident-locations-in-usa" class="level3">
-<h3 class="anchored" data-anchor-id="accident-locations-in-usa">6.Accident Locations in USA</h3>
+<section id="vi.accident-locations-in-usa" class="level3">
+<h3 class="anchored" data-anchor-id="vi.accident-locations-in-usa">vi.Accident Locations in USA</h3>
 <p>This scatter plot visualizes <strong>accident locations</strong> across the United States using geographic coordinates.</p>
 <p><strong>Variables</strong>:</p>
 <ul>
 <li><p><strong>X-axis</strong>: Longitude — The geographic coordinate representing the east-west position.</p></li>
 <li><p><strong>Y-axis</strong>: Latitude — The geographic coordinate representing the north-south position.</p></li>
 </ul>
-<div id="506180e1" class="cell" data-execution_count="6">
+<div id="32697fb9" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -260,19 +298,19 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 </section>
-<section id="interactive-plot-number-of-accidents-by-hour" class="level3">
-<h3 class="anchored" data-anchor-id="interactive-plot-number-of-accidents-by-hour">7.Interactive Plot: Number of Accidents by Hour</h3>
+<section id="vii.interactive-plot-number-of-accidents-by-hour" class="level3">
+<h3 class="anchored" data-anchor-id="vii.interactive-plot-number-of-accidents-by-hour">vii.Interactive Plot: Number of Accidents by Hour</h3>
 <p>This interactive plot shows the number of accidents across <strong>different hours of the day</strong>. It’s interactive, so you can hover over each bar to see the exact number of accidents.</p>
 <p><strong>Variables</strong>:</p>
 <ul>
 <li><p><strong>X-axis</strong>: Hour of the Day — The time of day when accidents occurred.</p></li>
 <li><p><strong>Y-axis</strong>: Number of Accidents — The total number of accidents that occurred at each hour.</p></li>
 </ul>
-<div id="604428d0" class="cell" data-execution_count="7">
+<div id="96d39194" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
-<div>                            <div id="44df08e3-2b0f-451a-bbde-500e373c5c4c" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("44df08e3-2b0f-451a-bbde-500e373c5c4c")) {                    Plotly.newPlot(                        "44df08e3-2b0f-451a-bbde-500e373c5c4c",                        [{"alignmentgroup":"True","hovertemplate":"Hour of Day=%{x}\u003cbr\u003eNumber of Accidents=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"indianred","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":[0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0],"xaxis":"x","y":[94937,82763,79470,71700,144459,203150,364578,533444,528563,325588,305577,314292,309023,343476,384968,452434,508695,505183,381410,260345,196171,164367,143876,106669],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Hour of Day"},"tickmode":"linear","dtick":1},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Accidents"}},"legend":{"tracegroupgap":0},"title":{"text":"Number of Accidents by Hour"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="1402d787-8853-4dc3-9461-52a923748e00" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1402d787-8853-4dc3-9461-52a923748e00")) {                    Plotly.newPlot(                        "1402d787-8853-4dc3-9461-52a923748e00",                        [{"alignmentgroup":"True","hovertemplate":"Hour of Day=%{x}\u003cbr\u003eNumber of Accidents=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"indianred","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":[0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0],"xaxis":"x","y":[94937,82763,79470,71700,144459,203150,364578,533444,528563,325588,305577,314292,309023,343476,384968,452434,508695,505183,381410,260345,196171,164367,143876,106669],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Hour of Day"},"tickmode":"linear","dtick":1},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Accidents"}},"legend":{"tracegroupgap":0},"title":{"text":"Number of Accidents by Hour"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('44df08e3-2b0f-451a-bbde-500e373c5c4c');
+var gd = document.getElementById('1402d787-8853-4dc3-9461-52a923748e00');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -297,9 +335,41 @@ if (outputEl) {{
                         })                };                });            </script>        </div>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="regression-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="regression-modeling">6. Regression Modeling</h2>
+<section id="objective" class="level3">
+<h3 class="anchored" data-anchor-id="objective">6.1 Objective</h3>
+<p>Predict accident <em>duration and frequency</em> using features like temperature, weather, state, and city.</p>
+</section>
+<section id="models-used" class="level3">
+<h3 class="anchored" data-anchor-id="models-used">6.2 Models Used</h3>
+<p>•⁠ ⁠<em>Linear Regression</em> (baseline model)<br>
+•⁠ ⁠<em>Ridge Regression</em> (with L2 regularization)</p>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">6.3 Results</h3>
+<p>•⁠ ⁠Both models had <em>very low R² (0.02)</em> and <em>high MSE (~17.96B)</em><br>
+•⁠ ⁠Ridge offered <em>no performance improvement</em><br>
+•⁠ ⁠Coefficients showed minor influence from selected features</p>
+</section>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">6.4 Interpretation</h3>
+<p>•⁠ ⁠Weak model performance suggests missing important predictors (e.g., road type, traffic density)<br>
+•⁠ ⁠Future work should explore <em>non-linear models</em> (e.g., Random Forest, XGBoost) for better accuracy</p>
+</section>
+</section>
+<section id="project-access" class="level2">
+<h2 class="anchored" data-anchor-id="project-access">7. Project Access</h2>
+<p>•⁠ ⁠📘 <em>Notebook version:</em><br>
+<a href="https://nbviewer.org/gist/GireesheePendela05/2ded31d49d9f2d018ca47b055ca543b0">nbviewer link</a></p>
+<p>•⁠ ⁠🌐 <em>Website version:</em><br>
+<a href="https://moran-teaching.github.io/project-repo/">GitHub Pages website</a></p>
+<p>•⁠ ⁠🧪 <em>Processed data:</em><br>
+<a href="https://drive.google.com/file/d/1n1PY7TDNqYezVx1R4wanDH9AMJ6FLbNQ/view?usp=sharing">Google Drive link</a></p>
+
+
 </section>
 
 </main> <!-- /main -->
