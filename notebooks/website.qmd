@@ -1,0 +1,190 @@
+
+---
+title: |
+  UNCOVERING PATTERNS IN US ACCIDENTS
+  - MSDS 597 Project (Group 17)
+author:
+- name: Anshu Goli, Veera Jeeshitha kolla, Gireeshee Pandela, Siritha Chidipothu
+  affiliation: Rutgers University, New Brunswick
+format:
+  html:
+    code-fold: true
+execute:
+  echo: false   
+  warning: false
+  error: false
+output-dir: docs 
+---
+# Data Exploration
+**This document explores the dataset and provides insights through visualizations.**
+
+### 1.Distribution of Accidents by Hour
+
+This plot shows the **distribution of accidents** across different hours of the day. It helps identify when accidents are more likely to occur.
+
+**Variables**:
+
+**- X-axis**: Hour of the day (from 0 to 23) — This represents the time of day when accidents occurred.
+
+**- Y-axis**: Number of Accidents — The total count of accidents that happened at each hour of the day.
+
+The plot reveals patterns in accident occurrences based on time, helping to identify peak accident hours.
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+accidents_df = pd.read_csv("/Users/anshureddy/Desktop/dwproject/accidents_cleaned.csv")
+
+sns.set(style="whitegrid", palette="Set2")
+
+# Ensure Hour column exists
+if 'Hour' not in accidents_df.columns:
+    accidents_df['Hour'] = accidents_df['Start_Time'].dt.hour
+
+plt.figure(figsize=(10,6))
+sns.histplot(accidents_df['Hour'], bins=24, kde=False, color='coral')
+plt.title('Distribution of Accidents by Hour')
+plt.xlabel('Hour of Day')
+plt.ylabel('Number of Accidents')
+plt.xticks(range(0,24))
+plt.grid(True)
+plt.show()
+```
+
+### 2.Top 10 States with Most Accidents
+
+This plot visualizes the **distribution of accidents** across the **top 10 states**. It helps identify which states have the highest accident rates.
+
+**Variables**:
+
+- **Labels**: States (e.g., "California", "New York")
+
+- **Values**: Number of Accidents — The number of accidents that occurred in each state.
+
+```{python}
+top_states = accidents_df['State'].value_counts().head(10)
+
+plt.figure(figsize=(8,8))
+plt.pie(top_states.values, labels=top_states.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
+plt.title('Top 10 States with Most Accidents')
+plt.show()
+```
+
+### 3.Top 10 Cities with Most Accidents
+
+This bar plot shows the **top 10 cities** with the most accidents. It gives insights into the cities where accidents are most frequent.
+
+**Variables**:
+
+- **X-axis**: Number of Accidents — The total count of accidents in each city.
+
+- **Y-axis**: Cities — The names of the cities.
+
+```{python}
+top_cities = accidents_df['City'].value_counts().head(10)
+
+plt.figure(figsize=(10,6))
+sns.barplot(y=top_cities.index, x=top_cities.values, palette="Blues_d")
+plt.title('Top 10 Cities with Most Accidents')
+plt.xlabel('Number of Accidents')
+plt.ylabel('City')
+plt.show()
+```
+
+### 4.Top 10 Weather Conditions during Accidents
+
+This bar plot displays the **top 10 weather conditions** under which accidents occurred.
+
+**Variables**:
+
+- **X-axis**: Weather Conditions (e.g., "Clear", "Rain")
+
+- **Y-axis**: Number of Accidents — The number of accidents that occurred under each weather condition.
+
+```{python}
+top_weather = accidents_df['Weather_Condition'].value_counts().head(10)
+weather_df = top_weather.reset_index()
+weather_df.columns = ['Weather', 'Counts']
+
+plt.figure(figsize=(12,6))
+sns.barplot(x='Weather', y='Counts', data=weather_df, palette='cubehelix')
+plt.title('Top 10 Weather Conditions during Accidents')
+plt.xlabel('Weather Condition')
+plt.ylabel('Number of Accidents')
+plt.xticks(rotation=45)
+plt.show()
+```
+
+### 5.Temperature Distribution during Accidents
+
+This box plot compares **temperatures during accidents** on weekdays and weekends.
+
+**Variables**:
+
+- **X-axis**: Is_Weekend (1 for Weekend, 0 for Weekday)
+
+- **Y-axis**: Temperature (Fahrenheit) — The temperature at the time of the accident.
+
+```{python}
+# Ensure Is_Weekend column exists
+if 'Is_Weekend' not in accidents_df.columns:
+    accidents_df['Start_Time'] = pd.to_datetime(accidents_df['Start_Time'], errors='coerce')
+    accidents_df['Weekday'] = accidents_df['Start_Time'].dt.weekday
+    accidents_df['Is_Weekend'] = accidents_df['Weekday'].apply(lambda x: 1 if x >= 5 else 0)
+
+plt.figure(figsize=(10,6))
+sns.boxplot(x='Is_Weekend', y='Temperature(F)', data=accidents_df, palette="coolwarm")
+plt.title('Temperature during Accidents (Weekday vs Weekend)')
+plt.xlabel('Weekend (1) vs Weekday (0)')
+plt.ylabel('Temperature (F)')
+plt.show()
+```
+
+### 6.Accident Locations in USA
+
+This scatter plot visualizes **accident locations** across the United States using geographic coordinates.
+
+**Variables**:
+
+- **X-axis**: Longitude — The geographic coordinate representing the east-west position.
+
+- **Y-axis**: Latitude — The geographic coordinate representing the north-south position.
+
+```{python}
+plt.figure(figsize=(12,8))
+sns.scatterplot(x='Start_Lng', y='Start_Lat', data=accidents_df, alpha=0.1, s=10, color='purple')
+plt.title('Accident Locations in USA')
+plt.xlabel('Longitude')
+plt.ylabel('Latitude')
+plt.show()
+```
+
+### 7.Interactive Plot: Number of Accidents by Hour
+
+This interactive plot shows the number of accidents across **different hours of the day**. It's interactive, so you can hover over each bar to see the exact number of accidents.
+
+**Variables**:
+
+- **X-axis**: Hour of the Day — The time of day when accidents occurred.
+
+- **Y-axis**: Number of Accidents — The total number of accidents that occurred at each hour.
+
+```{python}
+import plotly.express as px
+
+# Count accidents by hour
+hourly_counts = accidents_df['Hour'].value_counts().sort_index()
+
+# Create interactive bar chart
+fig = px.bar(x=hourly_counts.index, y=hourly_counts.values,
+             labels={'x': 'Hour of Day', 'y': 'Number of Accidents'},
+             title='Number of Accidents by Hour',
+             color_discrete_sequence=["indianred"])
+
+fig.update_layout(xaxis=dict(tickmode='linear', dtick=1))
+fig.show()
+```
+
