@@ -1,0 +1,12 @@
+project:
+  type: website 
+  output-dir: docs 
+
+title: "UNCOVERING PATTERNS IN US ACCIDENTS - MSDS 597 Project (Group 17)"
+author:
+  - name: "Anshu Goli"
+    affiliation: "Rutgers University, New Brunswick"
+format:
+  html:
+    code-fold: true  
+    toc: true        
