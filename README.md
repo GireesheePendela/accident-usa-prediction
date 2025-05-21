@@ -421,25 +421,25 @@ Predict accident frequency using features such as **weather conditions**, **temp
 |     data enrichment for us accidents data
 | 
 * commit e1baf841648fb7a2b125898d9a0b359df9d80dd9
-| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Author: GireesheePendela05 <gp590@scarletmail.rutgers.edu>
 | Date:   Sun Apr 27 20:56:40 2025 -0400
 | 
 |     Transformed raw data
 | 
 * commit d4611c1f13203ba31b95cfd0155431b74c8dcf30
-| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Author: GireesheePendela05 <gp590@scarletmail.rutgers.edu>
 | Date:   Sun Apr 27 20:51:06 2025 -0400
 | 
 |     rTansformation from raw data to tidy data in notebook
 | 
 * commit 9558d85865dcff4ed2648bfa0410ce95d5f6f1d2
-| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Author: GireesheePendela05 <gp590@scarletmail.rutgers.edu>
 | Date:   Sun Apr 27 20:41:45 2025 -0400
 | 
 |     Update README with data documentation and retrieval explanation
 | 
 * commit 5c5899b3879bfd54cff97b512b502e2cfb30810e
-| Author: unknown <gp590@scarletmail.rutgers.edu>
+| Author: GireesheePendela05 <gp590@scarletmail.rutgers.edu>
 | Date:   Sun Apr 27 20:11:10 2025 -0400
 | 
 |     Added raw data retrieval explanation and uploaded raw dataset
