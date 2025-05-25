@@ -262,42 +262,38 @@ Each row cleanly represents one accident event with consistent types across all 
 # 6. Data visualizations & Trends:
 
  ## 6.1. Distribution of Accidents by Hour:
-  ![image](https://github.com/user-attachments/assets/5e6ed18c-0692-4c49-a19c-d2f727fe2814)   
+ ![Distribution by Hour](images/6.1_d.png)   
   - This histogram shows that accidents peak around 7 AM and again between 4–6 PM.
   - These peaks align with morning and evening rush hours, indicating commuter traffic is a major factor.
 
  ## 6.2. Top 10 States with Most Accidents
- ![image](https://github.com/user-attachments/assets/a985838b-c06a-421b-8135-cb1d14c3a984)    
+ ![Top States](images/6.2_T.png)    
  - A pie chart showing that states like California, Florida, and Texas report the highest number of accidents.
  - Accident volume correlates with state population and urban density.
 
 ## 6.3. Top 10 Cities with Most Accidents
-![image](https://github.com/user-attachments/assets/f8efc8c8-336b-4882-9f3f-5418d745c5ef)
-
+![Top Cities](images/6.3_T.png)
 - A horizontal bar plot highlighting cities with the highest accident counts.
 - Large metropolitan cities show significantly more accidents, likely due to higher traffic volumes.
 
 ## 6.4.Top 10 Weather Conditions during Accidents
-![image](https://github.com/user-attachments/assets/3d193c78-63e7-4c72-a861-0bdac7eed1fd)
+![Top Weather](images/6.4_T.png)
 
 - Bar chart showing most accidents happen in 'Fair', 'Clear', and 'Mostly Cloudy' weather.
 - Contrary to intuition, severe weather conditions aren’t the most common during accidents, suggesting that normal driving conditions may lead to more complacency.
 
 ## 6.5. Temperature during Accidents (Weekday vs Weekend)
-![image](https://github.com/user-attachments/assets/64c8e240-edef-4c53-9471-31063d221ccf)
-
+![Temperature Boxplot](images/6.5_T.png)
 - Box plot comparing temperature distributions for accidents on weekdays vs weekends.
 - Temperature ranges are similar across both, but there are slightly more extreme values during weekends.
 
 ## 6.6. Accident Locations in USA
-![image](https://github.com/user-attachments/assets/b1a0c094-7d45-45da-93c9-8c4240a23095)
-
+![Accident Map](images/6.6_A.png)
 - A scatter plot mapping accident coordinates across the U.S., forming clear outlines of the highway network.
 - High accident densities follow major interstate routes and urban corridors, especially in the East, California, and Texas.
 
 ## 6.7. Interactive Plot: Number of Accidents by hour.
-![image](https://github.com/user-attachments/assets/df4a39b9-836f-433f-8540-7f8362a9bffc)
-
+![Interactive Preview](images/6.7_I.png)
 >Find the interactive plot in the website at the begining of the 'Readme.md' file
 
 ### Major trends observed:
